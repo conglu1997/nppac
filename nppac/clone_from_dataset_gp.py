@@ -188,6 +188,9 @@ if __name__ == "__main__":
                         help='What #traj to keep, by default has no effect.',
                         type=int,
                         default=1000)
+    parser.add_argument('--seed',
+                        type=int,
+                        default=0)
 
     args = parser.parse_args()
     name = args.name
@@ -200,10 +203,9 @@ if __name__ == "__main__":
     ptu.set_gpu_mode(args.use_gpu)  # optionally set the GPU (default=False)
 
     # Seeding
-    random_seed = random.SystemRandom().randint(1e6, 1e9)
-    torch.manual_seed(random_seed)
-    np.random.seed(random_seed)
-    random.seed(random_seed)
+    torch.manual_seed(args.seed)
+    np.random.seed(args.seed)
+    random.seed(args.seed)
 
     if name == 'half_cheetah':
         env = NormalizedBoxEnv(HalfCheetahEnv())
