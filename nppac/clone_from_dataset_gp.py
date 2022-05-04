@@ -160,6 +160,9 @@ if __name__ == "__main__":
                         help='Number of training epochs',
                         type=int,
                         default=1000)
+    parser.add_argument('--episode_length',
+                        type=int,
+                        default=1000)
     parser.add_argument('--evaluation_interval',
                         help='Evaluation interval',
                         type=int,
@@ -307,7 +310,7 @@ if __name__ == "__main__":
             model.eval()
             likelihood.eval()
 
-            max_path_length = 1000
+            max_path_length = args.episode_length
 
             start = datetime.datetime.now()
 
