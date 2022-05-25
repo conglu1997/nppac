@@ -19,6 +19,7 @@ We provide a Docker setup which may be built as follows:
 ```
 docker build -t torch-nppac .
 ```
+If not using docker, please note we used: https://github.com/conglu1997/mj_envs which contains some bug fixes.
 
 To train the GP policies offline:
 ```
