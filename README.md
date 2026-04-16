@@ -31,7 +31,7 @@ To run online training (N-PPAC):
 bash exp_scripts/paper_configs.sh
 ```
 
-Pre-trained GP policies using `final_clone_gp.sh` are provided in the folder `nppac/trained_gps/`.
+Pre-trained GP policies using `paper_clone_gp.sh` are provided in the folder `nppac/trained_gps/`.
 
 By default, all data will be stored in `data/`.
 
